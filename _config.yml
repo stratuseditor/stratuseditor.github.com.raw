@@ -1,0 +1,49 @@
+pygments: true
+permalink: /:title
+
+markdown: rdiscount
+rdiscount:
+  extensions: [generate_toc]
+
+demotext: |
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <title>{{ page.title }} | djg</title>
+      <link rel="stylesheet" href="/css/symbols.css"/>
+      <link rel="stylesheet" href="/css/style.css"/>
+      <style>
+        .hello, #whatever {
+          color: #f00;
+          text-decoration: underline;
+        }
+      </style>
+    </head>
+    <body>
+      <header>
+        <div class="container">
+          <h1><a href="/">DJG</a></h1>
+          <nav>
+            <ul>
+              <li><a href="http://stratuseditor.com/">Stratus</a></li>
+            </ul>
+          </nav>
+          <a title="ATOM" class="symbol atom" href="/atom.xml"></a>
+          <a title="Twitter" class="symbol twitter" href="https://twitter.com/#!/sentientwaffle"></a>
+        </div>
+      </header>
+      
+      <div class="container">
+        {{ content }}
+      </div>
+      
+      <footer>
+        <div class="container">
+          <hr/>
+          &copy; 2012
+          <a href="https://github.com/sentientwaffle">DJG</a>.
+          All rights reserved.
+        </div>
+      </footer>
+    </body>
+  </html>

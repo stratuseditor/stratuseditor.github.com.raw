@@ -1,0 +1,215 @@
+---
+---
+
+@import "nib"
+
+dblue = #4183C4
+container-width = 850px
+
+user-select(val)
+  -webkit-user-select val
+
+@font-face
+  font-family 'Inconsolata'
+  font-style normal
+  font-weight normal
+  src local('Inconsolata'), url('/fonts/Inconsolata.ttf') format('woff')
+
+
+/* Layout
+-------------------------------------*/
+*
+  margin 0px
+  padding 0px
+
+
+html
+  overflow visible
+
+body
+  background white
+  color #222
+  font-family sans-serif
+  overflow auto
+
+body > header
+  background linear-gradient(top, #e5e5e5, #f2f2f2)
+  box-shadow inset 0px -1px 5px rgba(black, 0.09)
+  padding 2px 0px
+  text-shadow 0px 1px 0px white
+  width 100%
+  
+  h1
+    display inline-block
+    margin 0px
+    margin-right 20px
+    user-select none
+    
+    a
+      color #555
+      font-family 'Inconsolata', monospace
+      &:hover
+        color dblue
+        text-decoration none
+  
+  nav
+    display inline-block
+    relative bottom 5px
+    > ul
+      list-style none
+      margin 0px
+      
+      > li
+        display inline-block
+      
+      a
+        color #666
+        font-weight bold
+        padding 11px 24px
+        &:hover
+          background rgba(black, 0.02)
+          color dblue
+          text-decoration none
+
+
+body > footer
+  color #666
+  font-size 70%
+  text-align center
+  .container
+    padding 16px
+
+.container
+  clear both
+  margin 0px auto
+  width container-width
+
+
+#soon
+  background #c00
+  border 1px solid #d33
+  border-width 0px 2px
+  box-shadow 0px 0px 2px rgba(black, 0.4), inset 0px 1px 4px rgba(black, 0.1)
+  color white
+  font-size 100%
+  font-variant small-caps
+  font-weight bold
+  margin -7px 20px
+  padding 11px 24px
+  text-shadow 0px -1px 1px #800
+  user-select none
+
+/* Markdown table of contents
+----------------------------------*/
+.table-of-contents
+  background rgba(black, 0.05)
+  border 1px solid #ddd
+  bottom 0px
+  fixed top 0px left 20px
+  font-size 90%
+  padding 30px 10px
+  ul
+    list-style none
+    margin 0px
+  > ul > li
+    margin 10px 0px 6px
+    > a
+      font-weight bold
+    
+    // Only display <h1> and <h2>
+    > ul > li > ul
+      display none
+
+
+/* Index: demo
+-----------------------------------*/
+// The fractus demo.
+.editor-demo
+  background #ccc
+  box-shadow 3px 3px 20px rgba(black, 0.5)
+  height 600px
+  margin-top 20px
+  width 100%
+
+.features
+  list-style none
+  margin 10px 0px
+  
+  > li
+    background #ccc
+    border 1px solid #aaa
+    display inline-block
+    float left
+    height (container-width / 5) - 4px
+    margin 1px
+    overflow hidden
+    position relative
+    transition border-color 120ms linear
+    width (container-width / 5) - 4px
+    
+    &:hover
+      border-color #888
+    
+    > a
+      display block
+      height 100%
+      &:hover
+        text-decoration none
+
+.feature-description
+  absolute bottom 0px left 0px
+  background rgba(black, 0.6)
+  color white
+  padding 6px 0px
+  right 0px
+  text-align center
+
+
+/* Base styles.
+--------------------------------------------*/
+a
+  color dblue
+  text-decoration none
+  &:hover
+    text-decoration underline
+
+p
+  line-height 20px
+  margin-top 10px
+
+ul, ol
+  margin 20px 40px 
+
+li > ul, li > ol
+  margin 5px 40px
+
+h1, h2, h3, h4, h5, h6
+  color black
+  margin 20px 0px 10px
+h1
+  margin-top 40px
+h3, h4, h5, h6
+  color #111
+
+::selection, ::-moz-selection
+  background rgba(black, 0.6)
+  color white
+
+code
+  background #eee
+  font-family 'Inconsolata', monospace
+
+pre
+  background #eee
+  border 1px solid #ddd
+  border-radius 8px
+  box-shadow inset 1px 1px 1px rgba(black, 0.06)
+  margin 6px
+  padding 4px
+
+hr
+  background #ccc
+  border none
+  height 2px
+  margin 10px 0px
+

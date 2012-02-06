@@ -1,0 +1,56 @@
+---
+layout: default
+title: Stratus Editor
+---
+
+<section>
+  <div class="editor-demo">
+  </div>
+  
+  <ul class="features">
+    <li>
+      <a href="/bundles">
+        <img draggable="false" src="/images/features/bundles.jpg"/>
+        <span class="feature-description">Bundles</span>
+      </a>
+    </li>
+    <li>
+      <a href="manual#File+Manager">
+        <img draggable="false" src="/images/features/file-tree.jpg"/>
+        <span class="feature-description">File tree</span>
+      </a>
+    </li>
+    <li>
+      <a href="/manual#Autocomplete">
+        <img draggable="false" src="/images/features/tabs.jpg"/>
+        <span class="feature-description">Autocompletion</span>
+      </a>
+    </li>
+    <li>
+      <a href="/plugins" title="The 'Snap Open file' plugin">
+        <img draggable="false" src="/images/features/snap-open.jpg"/>
+        <span class="feature-description">Plugins</span>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <img draggable="false" src="/images/features/split.jpg"/>
+        <span class="feature-description">Split screen</span>
+      </a>
+    </li>
+  </ul>
+</section>
+
+<script src="/js/fractus.js"></script>
+<script>
+  jQuery(function() {
+    var text = '{{ site.demotext | newline_to_br | strip_newlines | replace:'<br />','\\n' }}';
+    setTimeout(function() {
+      var fractus = require('fractus');
+      fractus($(".editor-demo"),
+        { text: text
+        , syntax: window.fractusBundles["HTML"]
+      });
+    }, 100)
+  });
+</script>
