@@ -10,3 +10,4 @@ Dependencies:
 
   * [Jekyll](https://github.com/mojombo/jekyll)
   * [Stylus](https://github.com/LearnBoost/stylus)
+  * [Fractus](https://github.com/stratuseditor/fractus)
