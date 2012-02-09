@@ -1999,25 +1999,33 @@ require.define("/node_modules/stratus-keyboard/package.json", function (require,
 module.exports = {"main":"./index"}
 });
 
-require.define("/node_modules/stratus-keyboard/index.coffee", function (require, module, exports, __dirname, __filename) {
+require.define("/node_modules/stratus-keyboard/index.js", function (require, module, exports, __dirname, __filename) {
+
+/*
+
+  require("stratus-keyboard") "your-scope",
+    "\n":        -> # select something...
+    ".":         ->
+    "Down":      ->
+    "Control-s": -> # save a file...
+    "Control-t": -> # open a tab...
+    "otherwise": ->
+*/
+
 (function() {
-
-  /*
-  
-    require("stratus-keyboard") "your-scope",
-      "\n":        -> # select something...
-      ".":         ->
-      "Down":      ->
-      "Control-s": -> # save a file...
-      "Control-t": -> # open a tab...
-      "otherwise": ->
-  */
-
-  var Keyboard, _;
+  var Keyboard, _, _window;
 
   _ = require('underscore');
 
-  module.exports = Keyboard = function(scope, map) {
+  _window = {};
+
+  if (typeof window !== "undefined" && window.stratusKeyboard) {
+    module.exports = window.stratusKeyboard;
+    _window = window;
+    return;
+  }
+
+  module.exports = _window.stratusKeyboard = Keyboard = function(scope, map) {
     var isFunction;
     isFunction = _.isFunction(map);
     if (Keyboard.map[scope]) {
