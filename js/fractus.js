@@ -2021,8 +2021,9 @@ require.define("/node_modules/stratus-keyboard/index.js", function (require, mod
 
   if (typeof window !== "undefined" && window.stratusKeyboard) {
     module.exports = window.stratusKeyboard;
-    _window = window;
     return;
+  } else if (typeof window !== "undefined") {
+    _window = window;
   }
 
   module.exports = _window.stratusKeyboard = Keyboard = function(scope, map) {
