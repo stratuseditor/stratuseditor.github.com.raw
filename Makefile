@@ -12,7 +12,7 @@ deploy:	build
 	cp -r _site/* _deploy
 	touch _deploy/.nojekyll
 	
-	cd _deploy && git add --all && git commit -am "deploy" && git push origin master
+	(cd _deploy && git add --all && git commit -am "deploy" && git push origin master)
 
 
 clean:
