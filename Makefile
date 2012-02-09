@@ -23,4 +23,4 @@ test:	build
 	jekyll --server
 
 
-.PHONY: build deploy clean
+.PHONY: build deploy clean test
